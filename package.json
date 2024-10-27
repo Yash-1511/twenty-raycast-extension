@@ -12,17 +12,17 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "create-new-record",
-      "title": "Create New Record",
-      "subtitle": "Fill in the details to create a record in Twenty.",
-      "description": "Quickly create a new record for any object in your Twenty instance directly from Raycast.",
+      "name": "create-new-company",
+      "title": "Create New Company",
+      "subtitle": "Fill in the details to create a company record in Twenty.",
+      "description": "Quickly create a new company record in your Twenty instance directly from Raycast.",
       "mode": "view"
     },
     {
-      "name": "list-all-records",
-      "title": "List All Records",
-      "subtitle": "View all records in a grid for easy management",
-      "description": "List and Manage records of any object from your twenty crm inside raycast.",
+      "name": "list-all-companies",
+      "title": "List All Companies",
+      "subtitle": "View all companies in a grid for easy management",
+      "description": "List and Manage companies from your twenty crm inside raycast.",
       "mode": "view"
     }
   ],

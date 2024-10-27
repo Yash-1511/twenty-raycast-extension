@@ -129,9 +129,9 @@ export default function Command() {
           <List.Item
             key={company.id}
             title={company.name}
-            subtitle={`${company.address.addressCity}, ${company.address.addressCountry}`}
+            subtitle={`${company.address.addressCity}${company.address.addressCountry ? `, ${company.address.addressCountry}` : ''}`}
             accessories={[
-              { text: `${company.employees} Employees` },
+              { text: `${company.employees ? company.employees : 0} Employees` },
               {
                 text: {
                   value: `${(company.annualRecurringRevenue.amountMicros / 1e6).toFixed(2)} ${company.annualRecurringRevenue.currencyCode}`,
@@ -141,8 +141,8 @@ export default function Command() {
             ]}
             actions={
               <ActionPanel>
-                <Action.OpenInBrowser title="View Company" url={company.domainName.primaryLinkUrl} />
-                <Action.OpenInBrowser title="View on LinkedIn" url={company.linkedinLink.primaryLinkUrl} />
+                {company.domainName.primaryLinkUrl && <Action.OpenInBrowser title="View Company" url={company.domainName.primaryLinkUrl} />}
+                {company.linkedinLink.primaryLinkUrl && <Action.OpenInBrowser title="View on LinkedIn" url={company.linkedinLink.primaryLinkUrl} />}
                 {company.people.length > 0 && (
                   <Action.Push title="View People" target={<PeopleList people={company.people} />} />
                 )}
